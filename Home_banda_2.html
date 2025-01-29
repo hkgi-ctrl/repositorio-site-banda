@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <title>Caso Pratico Banda U2_parte_2</title>
+    <meta charset="UTF-8">
+    <meta title="Caso Prático U2">
+    <meta name="description" content="Layout CSS Grid">
+    <meta name = "description" content = "A banda U2 é uma das melhores bandas de rock mundial. Liderada por Bono, a banda tem sua formação original composta por The Edge, Adam Cleyton e Larry Mullen.">
+	<meta name="keywords" content="U2, Rock, Bono, The Edge">
+    <meta name="author" content="Herick Rafael">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/d132031da6.js" crossorigin="anonymous"> </script>
+    
+    <style>
+
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+
+    * {
+        box-sizing: border-box;
+    }
+
+    [class*="col-"] {
+        float: left;
+    }
+
+    .row::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    @font-face {
+        font-family: "medieval";
+        src: url("font/medieval.ttf");   
+    }
+    @font-face {
+        font-family: "bread";
+        src: url("font/bread.ttf");
+    }
+
+    @font-face {
+        font-family: "urban";
+        src: url("font/urban.otf");
+    }
+
+    @font-face {
+        font-family: "music";
+        src: url("font/music.ttf");
+    }    
+
+    @font-face {
+        font-family: "rock1";
+        src: url("font/rock1.TTF");
+    } 
+
+    @font-face {
+        font-family: "rock2";
+        src: url("font/rock2.TTF");
+    } 
+
+    @font-face {
+        font-family: "black";
+        src: url("font/black.ttf");
+    }
+
+    @font-face {
+        font-family: "fragment";
+        src: url(font/fragment.otf);
+    }
+
+
+    body {
+        background-color: #fbf9f9;
+    }
+
+    .header {
+        background-color: #ffffff;
+        color: #000000;
+        padding: 5px;
+        text-align: center; 
+    }
+
+    #image_header {
+        width: 60px;
+    }
+
+    .topnav {
+        background-color: #fafafa;
+        padding: 5px;
+        font-size: 15px;
+    }
+
+    ul {
+        list-style-type: none;
+        margin-bottom: 0px;
+        padding: 10px;
+    }
+
+   
+    li a {
+        color: black;
+        margin-right: 20px;
+        padding-bottom: 10px;
+        text-decoration: none;
+        font-family: "medieval", Arial, Helvetica, sans-serif;
+        letter-spacing: 4px;  
+    }
+
+    li a:hover {
+        font-size: 18px;
+        color: black;
+       
+    }
+
+
+    .dropdown-menu {
+        color: rgb(8, 8, 8);
+        border: 1px solid black;
+        border-radius: 20px;
+        padding: 5px;
+    }
+
+    .dropdown-menu a:hover {
+        
+        font-size: 19px;
+    }
+
+    .me-2 {
+        border-radius: 10px;
+ 
+    }
+
+    .btn-outline-dark {
+        border-radius: 10px;
+        color: white;
+        background-color: black;
+    }
+
+    .coluna12 {
+        background-image: linear-gradient(to bottom right, black, grey, black, grey, black);
+    }
+
+    #titulo_1 {
+        text-align: center;
+        font-family: "urban", Arial, Helvetica, sans-serif;
+        letter-spacing: 20px;
+        font-size: 90px;
+        padding-top: 30px;
+        margin-bottom: 20px;
+        margin-top: 0px;
+        color: white;
+    }
+
+    #paragrafo_1 {
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 70px;
+        padding-top: 70px;
+        padding-left: 35px;
+        padding-right: 35px;
+        margin-bottom: 20px;
+        line-height: 1.1;
+        font-family: "fragment", Arial, Helvetica, sans-serif;
+        color: white;
+        text-shadow: 2px 1px black;
+        letter-spacing: 6px;       
+    }
+
+    #paragrafo_2 {
+        text-align: center;
+        font-family: "rock2", Arial, Helvetica, sans-serif;
+        font-size: 200px;
+        color: white;
+        margin-bottom: 10px;
+        margin-top: 0px;
+        padding-top: 0px;
+    }
+
+    #icones {
+        background-color: white;
+        color: black;
+        font-family: "rock2";
+        font-size: 30px;
+        padding: 10px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        letter-spacing: 30px;
+        text-align: center;
+    }
+
+
+    #section_discografia { 
+        background-color: rgb(255, 255, 255);
+        text-align: center;
+    }
+
+    #titulo_discografia {
+        width: 100%;
+        margin-top: 60px;
+        margin-bottom: 40px;
+        text-align: center;
+        font-size: 40px;
+        font-family: "medieval", Arial, Helvetica, sans-serif;
+        letter-spacing: 8px;
+        color: black;
+        text-shadow: 3px 2px rgb(216, 89, 195);
+    }
+
+    #grupo_discografia_1, #grupo_discografia_2 {
+        background-color: white;
+        padding-left: 10%;
+        padding-right: 10%;
+        text-align: center;
+        justify-content: center;
+    }
+
+    #grupo_discografia_2 {
+        padding-bottom: 40px;
+    }
+
+    .discografia {
+        position: relative;
+        display: inline-block;
+        justify-content: center;
+        padding: 25px;     
+    }
+
+    div.discografia img {
+        width: 100%;
+        border-radius: 15px;
+    } 
+        
+    div.discografia img:hover {
+        opacity: 0.4;
+        border: 2px solid black;
+    }
+
+    .descricao_disco {
+        position: absolute;
+        width: 80%;
+        text-align: center;
+        font-size: 15px;
+        font-family: "urban", Arial, Helvetica, sans-serif;
+    }
+
+
+    #titulo_top5 {
+        background-color: rgb(253, 253, 253);
+        padding-left: 12px;
+        margin-top: 75px;
+        padding-bottom: 25px; 
+        color: rgb(0, 0, 0);
+        text-align: center;
+        font-size: 30px;
+        font-family: "medieval", Arial, Helvetica, sans-serif;
+        letter-spacing: 5px;
+        text-shadow: 3px 2px rgb(216, 89, 195);
+    }
+
+
+    .table {
+        text-align: center;
+        justify-content: center;
+        font-family: "medieval", Arial, Helvetica, sans-serif;
+        border: 5px black double;
+        font-size: 20px;
+        padding-bottom: 20px;
+        width: 60%;
+        margin-left: 20%;
+    }
+
+    #linha1 {
+        background-color: grey;
+        color: white;
+    }
+        
+    #titulo_banda { 
+        background-color: rgb(253, 253, 253);
+        padding-left: 12px;
+        margin-top: 75px;
+        padding-bottom: 25px; 
+        color: rgb(0, 0, 0);
+        text-align: center;
+        font-size: 30px;
+        font-family: "medieval", Arial, Helvetica, sans-serif;
+        letter-spacing: 5px;
+        text-shadow: 3px 2px rgb(216, 89, 195);
+    }
+
+   #section_banda {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+        margin-bottom: 5px;      
+   }
+
+   .banda_ {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+        padding-bottom: 20px;
+   }
+
+   #imagem_integrante {
+        width: 85%; 
+   }
+
+    div.banda img {
+        margin: 0px;
+        padding: 8px;
+        border: 2px solid rgb(66, 65, 65);
+        border-radius: 30px;         
+    }
+
+    div.banda img:hover {
+        opacity: 0.8;
+    }
+      
+    div.banda:hover {
+        color: rgb(0, 0, 0);
+        font-size: 27px;
+        font-family: "medieval", Arial, Helvetica, sans-serif;
+    }
+
+    div.desc_banda { 
+        padding-bottom: 20px;
+        text-align: center;
+        font-family: "medieval", Arial, Helvetica, sans-serif;
+    }
+
+    
+    #titulo_contacto {    
+        padding-top: 40px;
+        margin-bottom: 40px; 
+        text-align: center;
+        font-size: 60px;
+        font-family: "medieval", Arial, Helvetica, sans-serif;
+        letter-spacing: 8px;
+        color: black;
+        text-shadow: 3px 2px rgb(216, 89, 195);   
+    }
+
+    #form_contacto {
+        color: rgb(255, 255, 255);
+        font-family: "medieval", Arial, Helvetica, sans-serif;
+        line-height: 35px;  
+        text-align: center;   
+        text-align: justify;
+        margin-left: 20%;
+        margin-right: 20%;    
+    }
+
+    
+    #contato_ {
+        text-align: justify;
+        margin-bottom: 20px;
+        
+    } 
+
+    #nome, #email, #telefone, #país {    
+        border: 1px solid rgb(254, 252, 252);
+        padding: 7px;
+        border-radius: 20px;
+        background-color: rgba(39, 37, 37, 0.9);
+        color: white;
+        font-family: "medieval", Arial, Helvetica, sans-serif;
+        line-height: 35px;            
+    }
+
+    #mensagem {
+        border: 2px solid rgb(0, 0, 0);
+        padding: 5px;
+        border-radius: 15px;
+        background-color: rgba(39, 37, 37, 0.9);
+        color: rgb(1, 1, 1);
+    }
+
+    
+    #botao {
+        border: 1px solid rgb(0, 0, 0);
+        width: 80px;
+        height:45px;
+        padding: 5px;
+        border-radius: 15px;
+        background-image: linear-gradient(to bottom right, rgb(222, 213, 222), rgb(7, 7, 7), rgb(222, 213, 222));
+        color: rgb(249, 248, 248);
+        font-family: "urban", Arial, Helvetica, sans-serif;
+        font-size: 15px;
+        letter-spacing: 2px;
+        margin-bottom: 30px;
+    }
+
+    .footer{
+        color: #EEE7D4;
+        margin-top: 5px;       
+    }
+
+    #redes-sociais {
+        background-image: url(https://i.pinimg.com/564x/e4/5f/3d/e45f3d622b915b75d919b0cade6cbdb2.jpg);
+        background-position: center;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        font-size: 30px;
+        text-align: center;
+        letter-spacing: 20px;       
+    }    
+    
+    .fab.fa-facebook-f, .fab.fa-instagram-square, .fab.fa-twitter-square {
+        color: white;     
+    }
+
+    .fab.fa-facebook-f:hover, .fab.fa-instagram-square:hover, .fab.fa-twitter-square:hover {
+        color: white;
+        font-size: 35px;    
+    }
+
+    #rodape {
+        color: #ffffff;
+        font-size: 15px;
+        letter-spacing: 2px;
+    }
+
+    </style>
+
+    </head>
+
+<body>
+
+    <!--Realizei a substituição do menu anterior por um dos modelos disponibilizados no Bootstrap-->
+
+    <nav class="navbar navbar-expand-lg navbar-ligth bg-ligth">
+
+        <div class="container-fluid">
+          
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="https://pt.wikipedia.org/wiki/U2" target="_blank">HISTÓRIA</a>
+                </li>
+              
+                <li class="nav-item">
+                    <a class="nav-link" href="https://pt.wikipedia.org/wiki/Discografia_de_U2" target="_blank">DISCOGRAFIA</a>
+                </li>
+              
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.u2.com/tour" target="_blank">CONCERTOS</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">BANDA</a>
+                
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="https://www.bing.com/search?q=bono++u2&qs=n&form=QBRE&sp=-1&lq=0&pq=bono++u2&sc=11-8&sk=&cvid=3012F96E457F46FCB86B291AC045C938&ghsh=0&ghacc=0&ghpl=" target="_blank">Bono Vox</a></li>
+                  <li><a class="dropdown-item" href="https://www.bing.com/search?q=the+edge++u2&qs=n&form=QBRE&sp=-1&lq=0&pq=the+edge++u2&sc=11-12&sk=&cvid=ABF69915F35D4E5799D953840E8C671F&ghsh=0&ghacc=0&ghpl=" target="_blank">The Edge</a></li>
+                  <li><a class="dropdown-item" href="https://www.bing.com/search?q=adam+clayton++u2&qs=n&form=QBRE&sp=-1&lq=0&pq=adam+clayton++u2&sc=9-16&sk=&cvid=C2E6CBFB925F4532B39C82CC0CA7C9BB&ghsh=0&ghacc=0&ghpl=" target="_blank">Adam Clayton</a></li>
+                  <li><a class="dropdown-item" href="https://www.bing.com/search?q=larry+muller+jr++u2&qs=n&form=QBRE&sp=-1&lq=0&pq=larry+muller+jr++u2&sc=6-19&sk=&cvid=32AE6C6DE3324ACAA1ADFECBC284DB1C&ghsh=0&ghacc=0&ghpl=" target="_blank">Larry Mullen</a></li>
+                  
+                 
+                </ul>
+              </li>
+             
+            </ul>
+
+            <form class="d-flex">
+
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-dark" type="submit">Search</button>
+
+            </form>
+
+          </div>
+
+        </div>
+
+      </nav>
+
+    <!-- Mantive essa section como estava anteriormente-->
+
+    <div class="row" id="section_banner">
+
+        <div class="coluna12 col-12">
+
+            <h2 id="titulo_1">THE BEST</h2>
+            <p id="paragrafo_1">Uma das maiores bandas mundiais de<br></p>
+            <p id="paragrafo_2">e</p>
+
+        </div>
+
+    </div>    
+
+
+    <div class="row" id="section_icones">
+
+        <div class="col-12">
+
+            <p id="icones"> b e i j k m o x </p>
+            
+        </div>
+
+    </div> 
+    
+    
+    <!--Adicionei um Carousel disponibilizado no Bootstrap-->
+
+    <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active" data-bs-interval="10000">
+            <img src="https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/u2-riccardo-zullian.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+            </div>
+          </div>
+          <div class="carousel-item" data-bs-interval="2000">
+            <img src="https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/u2-karl-knox.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="https://cdn-az.allevents.in/events9/banners/815beab23d5ca1a6e94888f6f0271abde9774333bc4842e15fed11998357e047-rimg-w960-h563-gmir.jpg?v=1667770201" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+
+      <!--Mantive essa section como estava anteriormente-->
+
+    <div class="row" id="section_discografia">
+
+        <div class="col-12">
+
+            <h1 id="titulo_discografia">DISCOGRAFIA</h1>
+            
+        </div>
+
+    </div> 
+
+
+
+    <div class="row" id="grupo_discografia_1">
+
+         <div class="col-12"> 
+
+            <div class="discografia col-3">
+                <a id="img_discografia"  target="_blank" href=https://www.u2.com/music/albums/4003><img src="https://cdn.ontourmedia.io/u2/non_secure/images/20090217/discography/albumcover__boy/600.jpg" alt="Boy"></a>
+                <div class="descricao_disco">BOY - 1980</div>
+            </div>
+
+
+            <div class="discografia col-3">
+                <a id="img_discografia" target="_blank" href=https://www.u2.com/music/albums/4007><img src="https://cdn.ontourmedia.io/u2/non_secure/images/20140418/discography/thejoshuatree_cover/600.jpg" alt="The Joshua Tree"></a>
+                <div class="descricao_disco">THE JOSHUA TREE - 1987</div>
+            </div>
+
+            <div class="discografia col-3">
+                <a id="img_discografia" target="_blank" href="https://www.u2.com/music/albums/4008"><img src="https://cdn.ontourmedia.io/u2/non_secure/images/20090214/discography/albumcover_rattle_and_hum/600.jpg" alt="Rattle and Hum"></a>
+                <div class="descricao_disco">RATTLE AND HUM - 1988</div>
+            </div>  
+                
+
+            <div class="discografia col-3">
+                <a id="img_discografia" target="_blank" href=https://www.u2.com/music/albums/4009><img src="https://cdn.ontourmedia.io/u2/non_secure/images/20090214/discography/albumcover_achtungb/600.jpg" alt="Achtung Baby"></a>
+                <div class="descricao_disco">ACHTUNG BABY - 1991</div>
+            </div>
+        
+        </div>    
+            
+        
+    </div>        
+
+
+
+    <div class="row" id="grupo_discografia_2">
+
+        <div class="col-12">
+
+            <div class="discografia col-3">
+                <a id="img_discografia" target="_blank" href=https://www.u2.com/music/albums/4011><img src="https://cdn.ontourmedia.io/u2/non_secure/images/20090214/discography/albumcover_pop/600.jpg" alt="Pop"></a>
+                <div class="descricao_disco">POP - 1997</div>
+            </div>
+
+
+            <div class="discografia col-3">
+                <a id="img_discografia" target="_blank" href=https://www.u2.com/music/albums/4013><img src="https://cdn.ontourmedia.io/u2/non_secure/images/20090217/discography/albumcover_allthat/600.jpg" alt="All that you cant leave behind"></a>
+                <div class="descricao_disco">ALL THAT YOU CAN'T LEAVE BEHIND - 2000</div>
+            </div>
+
+            <div class="discografia col-3">
+                <a id="img_discografia" target="_blank" href="https://www.u2.com/music/albums/4172"><img src="https://cdn.ontourmedia.io/u2/non_secure/images/20171031/discography/soe_cover/600.jpg" alt="Song of Experience"></a>
+                <div class="descricao_disco">SONGS OF EXPERIENCE - 2017</div>
+            </div>  
+            
+
+            <div class="discografia col-3">
+                <a id="img_discografia" target="_blank" href=https://www.u2.com/music/albums/4195><img src="https://cdn.ontourmedia.io/u2/non_secure/images/20230111/u2_sos_cover1673449475/u2_sos_cover1673449475_640.jpg" alt="Songs of surrender"></a>
+                <div class="descricao_disco">SONGS OF SURRENDER - 2023</div>
+            </div>
+
+        </div>    
+
+    </div>
+
+    <!--Adicionei uma tabela, também com recurso Bootstrap-->
+
+    <div class="row" id="titulo_top5">
+
+        <div class="col-12">
+            <h2>MÚSICAS MAIS TOCADAS</h2>
+        </div>
+
+    </div>    
+
+    <table class="table">
+
+        <thead id="linha1">
+          <tr>
+            <th scope="col">Posição</th>
+            <th scope="col">Música</th>
+            <th scope="col">Álbum</th>
+            <th scope="col">Ano</th>   
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>One</td>
+            <td>Achtung Baby</td>
+            <td>1991</td>
+           
+          </tr>
+
+          <tr>
+            <th scope="row">2</th>
+            <td>With or Without You</td>
+            <td>The Joshua Tree</td>
+            <td>1987</td>
+           
+          </tr>
+          
+          <tr>
+            <th scope="row">3</th>
+            <td>Where the Streets Have No Name</td>
+            <td>The Joshua Tree</td>
+            <td>1987</td>
+          </tr>
+
+          <tr>
+            <th scope="row">4</th>
+            <td>Sunday Bloody Sunday</td>
+            <td>War</td>
+            <td>1983</td>
+          </tr>
+
+          <tr>
+            <th scope="row">5</th>
+            <td>Beautiful Day</td>
+            <td>All That You Can't Leave Behind</td>
+            <td>2000</td>
+          </tr>
+
+        </tbody>
+      
+    </table>
+
+
+    <!--Mantive essa section como estava anteriormente-->
+
+    <div class="row" id="titulo_banda">
+
+        <div class="col-12">
+            <h2>BANDA</h2>
+        </div>
+
+    </div>    
+
+
+    <div class="row" id="section_banda">
+
+        <div class="banda_ col-12">
+
+            <div class="banda col-3">
+                
+                <a target="_blank" href="https://www.bing.com/search?q=bono++u2&qs=n&form=QBRE&sp=-1&lq=0&pq=bono++u2&sc=11-8&sk=&cvid=3012F96E457F46FCB86B291AC045C938&ghsh=0&ghacc=0&ghpl="><img id="imagem_integrante" src="https://i.pinimg.com/564x/c4/8b/3b/c48b3b25444018a91ef8a725b2852885.jpg" alt="Bono" title="Clique para saber mais sobre o Bono" width="100%"></a>
+                <div class="desc_banda">BONO</div>
+                    
+            </div> 
+
+            <div class="banda col-3">
+            
+                <a target="_blank" href="https://www.bing.com/search?q=adam+clayton++u2&qs=n&form=QBRE&sp=-1&lq=0&pq=adam+clayton++u2&sc=9-16&sk=&cvid=C2E6CBFB925F4532B39C82CC0CA7C9BB&ghsh=0&ghacc=0&ghpl="><img id="imagem_integrante" src="https://i.pinimg.com/564x/0a/b6/da/0ab6da047b0b1377ce05b2ab6d866871.jpg" alt="Adam Cleyton" title="Clique para saber mais sobre o Adam Cleyton" width="100%"></a>
+                <div class="desc_banda">ADAM CLEYTON</div>
+                    
+            </div>
+
+            <div class="banda col-3">
+            
+                <a target="_blank" href="https://www.bing.com/search?q=the+edge++u2&qs=n&form=QBRE&sp=-1&lq=0&pq=the+edge++u2&sc=11-12&sk=&cvid=ABF69915F35D4E5799D953840E8C671F&ghsh=0&ghacc=0&ghpl="><img id="imagem_integrante" src="https://i.pinimg.com/originals/89/da/1c/89da1c42e6920e68e23472bc5cdabfad.jpg" alt="The Edge" title="Clique para saber mais sobre o The Edge" width="100%"></a>
+                <div class="desc_banda">THE EDGE</div>
+                    
+            </div> 
+
+            <div class="banda col-3">
+                
+                <a target="_blank" href="https://www.bing.com/search?q=larry+muller+jr++u2&qs=n&form=QBRE&sp=-1&lq=0&pq=larry+muller+jr++u2&sc=6-19&sk=&cvid=32AE6C6DE3324ACAA1ADFECBC284DB1C&ghsh=0&ghacc=0&ghpl="><img id="imagem_integrante" src="https://i.pinimg.com/564x/20/25/c5/2025c5b9525953cf5db3cf9e18711dfd.jpg" alt="Larry" title="Clique para saber mais sobre o Larry" width="100%"></a>
+                <div class="desc_banda">LARRY MULLEN</div>
+                    
+            </div>
+
+        </div>     
+
+    </div>
+
+
+    <!--Reformulei a estrutura e posicionamenro do formulário, também com recurso Bootstrap-->
+
+    <div class="row" id="section_contacto">
+
+        <div class="col-12">
+        
+            <h1 id="titulo_contacto">CONTACTO</h1>
+
+        </div>
+
+        <div class="col-12" id="contato_">
+
+            <form id="form_contacto">
+
+                <div class="form-row" id="section_contato">
+
+                    <div class="col-md-6 mb-12" id="nome">
+                        <label for="validationDefault01">Nome completo</label>
+                        <input type="text" class="form-control" id="validationDefault01" placeholder="" required>
+                    </div>
+
+                    <div class="col-md-6 mb-12" id="email">
+                        <label for="validationDefaultUsername">E-mail</label>
+                        <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroupPrepend2">@</span>
+                        </div>
+                        <input type="text" class="form-control" id="validationDefaultUsername" placeholder="" aria-describedby="inputGroupPrepend2" required>
+                        </div>
+                    </div>
+                    
+                </div>
+
+            </form>    
+
+
+        </div>
+
+        
+        <div class="col-12" id="contato_">
+
+            <form id="form_contacto">
+
+                <div class="form-row" id="section_contato">
+
+                        <div class="col-md-6 mb-12" id="telefone">
+                            <label for="validationDefault02">Telefone</label>
+                            <input type="text" class="form-control" id="validationDefault02" placeholder="" required>
+                        </div>
+                    
+            
+                        <div class="col-md-6 mb-12" id="país">
+                            <label for="validationDefault04">País</label>
+                            <input type="text" class="form-control" id="validationDefault04" placeholder="" required>
+                        </div><br>
+                
+                </div>
+                
+            </form>
+            
+        </div>    
+                            
+               
+        <div class="col-12" id="contato_">
+
+            <form id="form_contacto">
+
+                <div class="form-row" id="section_contato">
+
+                        <div class="col-md-6 mb-12" id="mensagem">
+
+                            <div class="form-floating">
+
+                                <textarea class="form-control" placeholder="Envie sua mensagem aqui" id="floatingTextarea"></textarea>
+
+                                <label for="floatingTextarea">Envie sua mensagem aqui...</label>
+
+                            </div>
+
+                        </div>
+                
+                </div>
+                
+            </form>
+            
+        </div>    
+
+
+        <div class="col-12">
+
+            <form id="form_contacto">
+        
+                <div class="form-row" id="section_contato">
+        
+                    <button class="btn btn-primary" id="botao" type="submit">ENVIAR</button>
+                
+                </div>   
+   
+
+            </form>
+
+        </div>    
+
+    </div>    
+
+
+    <!--Footer foi mantido como estava anteriormente-->
+
+    <div class="row footer">
+
+        <div class="col-12" id="redes-sociais">
+    
+                <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                
+                <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram-square"></i></a>
+                
+                <a href="https://twitter.com/?lang=pt_pt" target="_blank"><i class="fab fa-twitter-square"></i></a>
+
+                <p id="rodape">Copyright &copy; 2023 Caso prático desenvolvido por Herick Rafael</p>   
+                
+                
+    
+        </div>
+    
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"crossorigin="anonymous"></script>
+
+</body>
+
+</html>
